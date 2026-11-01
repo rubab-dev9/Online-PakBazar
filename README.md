@@ -1,4 +1,4 @@
-# Online PakBazar
+# Online PakBazar – E-Commerce Platform
 
 A full-stack **MERN-based multi-vendor e-commerce platform** developed as a **Final Year Project (FYP)** for Virtual University of Pakistan.
 
@@ -701,27 +701,6 @@ Potential future enhancements include:
 * Enhanced admin analytics dashboard
 * Promotional offers and discount coupons
 * Advanced inventory management
-
----
-
-## Developer
-
-**Umm e Rubab Fatima**
-
-* **VU ID:** BC220401286
-* **Program:** BS Software Engineering
-* **Project:** Final Year Project (FYP)
-* **Project Title:** Online PakBazar – E-Commerce Platform
-
----
-
-## Project Supervisor
-
-**Muhammad Qamar Usman**
-
-* Software Projects & Research Section
-* Department of Computer Sciences
-* Virtual University of Pakistan
 
 ---
 
