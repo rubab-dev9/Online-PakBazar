@@ -1,282 +1,456 @@
-# 🛒 Online PakBazar – E-Commerce Platform
+# Online PakBazar
 
-**A Full-Stack Multi-Vendor E-Commerce Marketplace**
+A full-stack **MERN-based multi-vendor e-commerce platform** developed as a **Final Year Project (FYP)** for Virtual University of Pakistan.
 
-Online PakBazar is a web-based digital marketplace developed as a **Final Year Project (FYP)** for the BS Software Engineering program at Virtual University of Pakistan. It connects suppliers and customers through a centralized platform managed by an administrator.
+Online PakBazar connects suppliers and customers through a centralized digital marketplace, allowing suppliers to manage products and orders, customers to browse and purchase products, and administrators to manage the overall platform.
 
-The platform allows suppliers to manage their products and orders, customers to browse products and make purchases, and administrators to oversee the entire marketplace. It features role-based dashboards, secure authentication, order tracking, product reviews, and email notifications.
-
----
-
-## 📌 Table of Contents
-
-- [Project Overview](#-project-overview)
-- [Technologies Used](#-technologies-used)
-- [Key Features](#-key-features)
-- [User Roles](#-user-roles)
-- [System Architecture](#-system-architecture)
-- [Database Collections](#-database-collections)
-- [API Endpoints](#-api-endpoints)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Project Structure](#-project-structure)
-- [Developer](#-developer)
-- [Supervisor](#-supervisor)
+The platform provides role-based dashboards, secure authentication, product management, shopping cart, wishlist, order tracking, ratings and reviews, and email notifications.
 
 ---
 
-## 📖 Project Overview
+## Project Overview
 
-Online PakBazar provides a complete e-commerce solution with three distinct user roles:
+Online PakBazar is a web-based multi-vendor marketplace designed to simplify online buying and selling while supporting local businesses.
 
-- **Admin:** Manages users, suppliers, products, orders, and customer inquiries.
-- **Supplier:** Adds and manages products, processes orders, and responds to customer reviews.
-- **Customer:** Browses products, manages a shopping cart and wishlist, places orders, and submits reviews.
+The application provides three different user roles:
 
-The main objective of this project is to promote local businesses, simplify the buying and selling process, and provide a secure and user-friendly online shopping experience.
+* **Admin:** Manages users, suppliers, products, orders, and customer inquiries.
+* **Supplier:** Manages products, processes orders, views customer reviews, and monitors business statistics.
+* **Customer:** Browses products, manages a shopping cart and wishlist, places orders, tracks purchases, and submits product reviews.
+
+The project focuses on:
+
+* Multi-vendor e-commerce functionality
+* Role-based authentication and authorization
+* Separate dashboards for Admin, Supplier, and Customer
+* Product listing and management
+* Product search, filtering, and sorting
+* Shopping cart and wishlist management
+* Order placement and tracking
+* Cash on Delivery (COD) payment
+* Product ratings and reviews
+* Email OTP verification
+* Admin and supplier management systems
+* Responsive user interface
+* Secure API development
 
 ---
 
-## 💻 Technologies Used
+## Tech Stack
 
 ### Frontend
 
-| Technology | Purpose |
-|---|---|
-| React.js | User Interface Development |
-| React Router DOM | Client-Side Routing |
-| React Bootstrap (v5) | UI Components |
-| React Icons | Icon Library |
-| Axios | HTTP Requests |
-| React Toastify | Toast Notifications |
-| CSS3 | Custom Styling |
+* **React.js** – UI development
+* **React Router DOM** – Client-side routing
+* **React Bootstrap (v5)** – UI components
+* **React Icons** – Icon library
+* **Axios** – HTTP requests and API integration
+* **React Toastify** – Toast notifications
+* **CSS3** – Custom styling
 
 ### Backend
 
-| Technology | Purpose |
-|---|---|
-| Node.js | JavaScript Runtime Environment |
-| Express.js | Backend Web Framework |
-| JWT | Authentication and Authorization |
-| bcryptjs | Password Hashing |
-| Nodemailer | Email Services |
+* **Node.js** – JavaScript runtime environment
+* **Express.js** – Backend framework
+* **JWT (JSON Web Token)** – Authentication and authorization
+* **bcryptjs** – Password hashing
+* **Nodemailer** – Email services
 
 ### Database
 
-| Technology | Purpose |
-|---|---|
-| MongoDB | NoSQL Database |
-| Mongoose | Object Data Modeling |
-| MongoDB Compass | Database Management GUI |
+* **MongoDB** – NoSQL database
+* **Mongoose** – Object Data Modeling (ODM)
+* **MongoDB Compass** – Database management GUI
 
 ### Development Tools
 
-| Tool | Purpose |
-|---|---|
-| Visual Studio Code | Code Editor |
-| Postman | API Testing |
-| Git & GitHub | Version Control |
-| Google Docs | Documentation |
-| Google Slides | Presentation |
+* **Visual Studio Code** – Code editor
+* **Postman** – API testing
+* **Git** – Version control
+* **GitHub** – Source code management
+* **Google Docs** – Project documentation
+* **Google Slides** – Project presentation
 
 ---
 
-## ✨ Key Features
+## User Roles
+
+The application supports three user roles, each with specific permissions and functionalities.
+
+### Admin
+
+The administrator has overall control of the marketplace.
+
+Main responsibilities:
+
+* View dashboard statistics
+* View and manage all registered users
+* Delete user accounts
+* Approve pending supplier accounts
+* Manage all products
+* Manage all orders
+* Update order statuses
+* View customer contact messages
+* Reply to customer inquiries
+* Monitor platform revenue and activity
+
+### Supplier
+
+Suppliers can manage their own products and orders through a dedicated dashboard.
+
+Main responsibilities:
+
+* View supplier dashboard statistics
+* Add new products
+* Edit existing products
+* Delete products
+* Manage product stock
+* View orders containing their products
+* Update order statuses
+* View customer product reviews
+* Reply to customer reviews
+* Monitor product ratings
+* View top-selling products
+
+### Customer
+
+Customers can browse the marketplace and purchase products.
+
+Main responsibilities:
+
+* Register and verify email
+* Login securely
+* Browse available products
+* Search and filter products
+* Sort products by price and date
+* Add products to shopping cart
+* Update cart quantities
+* Add products to wishlist
+* Place orders using COD
+* Track order status
+* View order history
+* Cancel pending orders
+* Rate and review purchased products
+* Mark reviews as helpful
+* Manage personal profile
+
+---
+
+## Project Structure
+
+The project is organized into separate frontend and backend directories to maintain a clean separation of concerns.
+
+```text
+Online-PakBazar/
+│
+├── client/
+│   ├── public/
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── services/
+│   │   ├── routes/
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   │
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .env
+│
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   │
+│   ├── server.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .env
+│
+├── .gitignore
+└── README.md
+```
+
+*Note: This is a representative structure. Actual folder and file names may vary depending on the implementation.*
+
+---
+
+## Main Features
 
 ### 1. Authentication & Profile Management
 
-- User registration with email OTP verification.
-- Secure login using JWT authentication.
-- Role-based access control (Admin, Supplier, Customer).
-- Profile management and profile updates.
-- Change password functionality.
-- Forgot and reset password functionality.
+The application provides secure authentication and account management for all user roles.
+
+Features include:
+
+* User registration with email OTP verification
+* User login using JWT authentication
+* Role-based access control (Admin, Supplier, Customer)
+* Profile information updates
+* Change password functionality
+* Forgot password functionality
+* Reset password functionality
+
+---
 
 ### 2. Product Management
 
-- Suppliers can add, edit, and delete products.
-- Product information includes name, description, price, category, stock, and images.
-- Product image uploads using Base64 encoding with compression.
-- Automatic stock status management:
-  - In Stock
-  - Low Stock
-  - Out of Stock
+Suppliers can manage their products through their dedicated dashboard.
 
-**Product Categories:**
-- Grocery
-- Electronics
-- Home Essentials
-- Fashion
+Features include:
+
+* Add new products
+* Edit existing products
+* Delete products
+* Upload product images
+* Product image compression using Base64 encoding
+* Product descriptions and pricing
+* Category assignment
+* Stock quantity management
+
+Product information includes:
+
+* Product Name
+* Description
+* Price
+* Category
+* Stock Quantity
+* Product Images
+* Supplier Information
+
+#### Product Categories
+
+* Grocery
+* Electronics
+* Home Essentials
+* Fashion
+
+#### Stock Management
+
+Products are categorized based on their availability:
+
+* In Stock
+* Low Stock
+* Out of Stock
+
+---
 
 ### 3. Product Search, Filtering & Sorting
 
-- Search products by name, category, and description.
-- Filter products by category.
-- Filter products by price range.
-- Sort products by:
-  - Newest Arrivals
-  - Price: Low to High
-  - Price: High to Low
+The marketplace provides product discovery functionality to help customers find products easily.
+
+Features include:
+
+* Search by product name
+* Search by category
+* Search by description
+* Filter by product category
+* Filter by price range
+
+#### Sorting Options
+
+* Newest Arrivals
+* Price: Low to High
+* Price: High to Low
+
+---
 
 ### 4. Shopping Cart
 
-- Add products to the shopping cart.
-- Remove products from the cart.
-- Update product quantities.
-- Automatic cart total calculation.
-- Cart count badge in the navigation bar.
+Customers can manage their selected products before placing an order.
+
+Features include:
+
+* Add products to cart
+* Remove products from cart
+* Increase or decrease product quantities
+* Automatic cart total calculation
+* Cart count badge in the navigation bar
+
+---
 
 ### 5. Wishlist
 
-- Add and remove products from the wishlist.
-- Persistent wishlist storage.
-- LocalStorage support for guest users.
-- Database storage for authenticated users.
-- Wishlist count badge in the navigation bar.
+The wishlist allows customers to save products for future purchases.
 
-### 6. Order Management
+Features include:
 
-- Place orders using Cash on Delivery (COD).
-- Automatic unique order ID generation.
-- Order tracking with automatic refresh every 30 seconds.
-- View personal order history.
-- Cancel pending orders.
+* Add products to wishlist
+* Remove products from wishlist
+* Persistent wishlist storage
+* LocalStorage support for guest users
+* Database storage for authenticated users
+* Wishlist count badge in the navigation bar
 
-**Order Status Workflow:**
+---
 
-`Pending → Processing → Shipped → Delivered`
+### 6. Order Management & Tracking
 
-Orders can also be marked as `Cancelled`.
+The application provides order management functionality for customers, suppliers, and administrators.
 
-### 7. Payment Management
+Features include:
 
-- Cash on Delivery (COD) payment method.
-- Payment status tracking.
+* Place new orders
+* Automatic unique order ID generation
+* View order history
+* Track order status
+* Automatic order tracking refresh every 30 seconds
+* Cancel pending orders
+* Supplier order management
+* Admin order management
+
+#### Order Status Workflow
+
+```text
+Pending
+   ↓
+Processing
+   ↓
+Shipped
+   ↓
+Delivered
+```
+
+Orders can also be marked as:
+
+* Cancelled
+
+---
+
+### 7. Payment Integration
+
+The platform currently supports:
+
+* Cash on Delivery (COD)
+* Payment status tracking
+
+---
 
 ### 8. Ratings & Reviews
 
-- Customers can rate products from 1 to 5 stars.
-- Write reviews with a title and comment.
-- Suppliers can reply to customer reviews.
-- Mark reviews as helpful.
-- Display average product ratings on product cards.
+Customers can share their feedback about products.
+
+Features include:
+
+* Product ratings from 1 to 5 stars
+* Review title and comments
+* Supplier replies to customer reviews
+* Mark reviews as helpful
+* Average rating display on product cards
+
+---
 
 ### 9. Admin Dashboard
 
-- Dashboard statistics:
-  - Total Users
-  - Total Suppliers
-  - Total Products
-  - Total Orders
-  - Total Revenue
-- View and delete users.
-- Approve pending supplier accounts.
-- Manage all products.
-- Manage all customer orders.
-- Update order statuses.
-- View contact messages and reply to inquiries.
+The admin dashboard provides centralized management of the marketplace.
+
+#### Dashboard Statistics
+
+* Total Users
+* Total Suppliers
+* Total Products
+* Total Orders
+* Total Revenue
+
+#### Management Features
+
+* View all registered users
+* Delete users
+* Approve pending suppliers
+* Manage all products
+* Manage all orders
+* Update order statuses
+* View contact messages
+* Reply to customer inquiries
+
+---
 
 ### 10. Supplier Dashboard
 
-- Dashboard statistics:
-  - Total Products
-  - Total Orders
-  - Total Revenue
-  - Average Rating
-- Add, edit, and delete products.
-- View orders containing supplier products.
-- Update order statuses.
-- View customer reviews and reply to them.
-- View top-selling products.
+The supplier dashboard allows suppliers to monitor and manage their business activities.
 
-### 11. Additional Pages
+#### Dashboard Statistics
 
-- Home Page
-- About Us Page
-- Contact Us Page
-- FAQs Page
-- Profile Page
+* Total Products
+* Total Orders
+* Total Revenue
+* Average Rating
 
-### 12. Notifications & Email Services
+#### Management Features
 
-- Toast notifications for user actions.
-- Email OTP verification.
-- Email notifications for contact form replies.
-- Contact form email submission using Nodemailer.
-
-### 13. Security Features
-
-- JWT-based authentication.
-- Password hashing using bcryptjs (10 salt rounds).
-- Role-Based Access Control (RBAC).
-- Protected frontend routes.
-- Protected backend API endpoints.
-- CORS configuration.
-
-### 14. Responsive Design & User Experience
-
-- Fully responsive layout for mobile, tablet, and desktop.
-- Modern gradient buttons and cards.
-- Loading skeletons for improved user experience.
-- Sticky navigation bar.
-- Interactive UI components.
+* Add, edit, and delete products
+* View orders containing supplier products
+* Update order statuses
+* View customer reviews
+* Reply to reviews
+* View top-selling products
 
 ---
 
-## 👥 User Roles
+### 11. Contact & Email Notifications
 
-| Feature | Admin | Supplier | Customer |
-|---|:---:|:---:|:---:|
-| Dashboard | ✅ | ✅ | — |
-| Manage Users | ✅ | — | — |
-| Approve Suppliers | ✅ | — | — |
-| Manage Products | ✅ | Own Products | — |
-| Browse Products | ✅ | ✅ | ✅ |
-| Shopping Cart | — | — | ✅ |
-| Wishlist | — | — | ✅ |
-| Place Orders | — | — | ✅ |
-| Manage Orders | All Orders | Own Product Orders | Own Orders |
-| Product Reviews | — | View & Reply | Add Reviews |
-| Contact Messages | View & Reply | — | Send Messages |
-| Profile Management | ✅ | ✅ | ✅ |
+The application includes a contact system and email notification functionality.
+
+Features include:
+
+* Contact form submission
+* Contact message management
+* Admin replies to customer messages
+* Email notifications for contact form replies
+* OTP email verification using Nodemailer
 
 ---
 
-## 🏗️ System Architecture
+### 12. Responsive Design & User Experience
 
-Online PakBazar follows a MERN Stack architecture:
+The frontend is designed to provide a consistent experience across different devices.
 
-- **Frontend:** React.js handles the user interface and client-side interactions.
-- **Backend:** Node.js and Express.js handle API requests, authentication, and business logic.
-- **Database:** MongoDB stores users, products, orders, reviews, and other application data.
-- **Authentication:** JWT manages secure user sessions and role-based authorization.
-- **Email Service:** Nodemailer handles OTP verification and email notifications.
+Supported screen sizes:
 
-**Application Flow:**
+* Desktop
+* Laptop
+* Tablet
+* Mobile devices
 
-`React Frontend → Axios API Requests → Express.js Server → Mongoose → MongoDB`
+UI features include:
+
+* Responsive layouts
+* Modern gradient buttons and cards
+* Sticky navigation bar
+* Loading skeletons
+* Toast notifications
+* Interactive dashboard components
+* Responsive product cards
 
 ---
 
-## 🗄️ Database Collections
+## Database Collections
 
-The application uses the following MongoDB collections:
+The application uses MongoDB to store and manage platform data.
 
 | Collection | Description |
 |---|---|
-| `users` | User information, roles, credentials, and approval status |
+| `users` | User information, credentials, roles, and approval status |
 | `products` | Product details, prices, categories, stock, images, and supplier references |
 | `orders` | Order IDs, items, total amount, status, and shipping address |
-| `reviews` | Ratings, titles, comments, users, products, and supplier replies |
+| `reviews` | Product ratings, titles, comments, users, products, and supplier replies |
 | `wishlist` | User wishlist items |
 | `contact` | Contact form messages and reply status |
-| `otp` | OTP codes used for email verification |
+| `otp` | OTP codes for email verification |
 
 ---
 
-## 🔗 API Endpoints
+## API Endpoints
 
-The project includes **53 APIs** covering authentication, products, customers, suppliers, and administration.
+The application includes **53 APIs** covering authentication, product management, customer operations, supplier functionality, and administration.
 
 ### Public Endpoints
 
@@ -284,7 +458,7 @@ The project includes **53 APIs** covering authentication, products, customers, s
 |---|---|---|
 | POST | `/auth/register` | Register a new user |
 | POST | `/auth/verify-otp` | Verify email OTP |
-| POST | `/auth/login` | Authenticate user |
+| POST | `/auth/login` | User login |
 | GET | `/products` | Get all products |
 | GET | `/products/:id` | Get a single product |
 | POST | `/contact/send` | Submit contact message |
@@ -306,7 +480,7 @@ The project includes **53 APIs** covering authentication, products, customers, s
 | POST | `/products/add` | Add a new product |
 | GET | `/supplier/stats` | Get supplier dashboard statistics |
 | GET | `/supplier/recent-orders` | Get recent supplier orders |
-| PUT | `/supplier/reviews/:reviewId/reply` | Reply to a customer review |
+| PUT | `/supplier/reviews/:reviewId/reply` | Reply to customer review |
 
 ### Admin Endpoints
 
@@ -316,24 +490,42 @@ The project includes **53 APIs** covering authentication, products, customers, s
 | GET | `/admin/users` | Get all users |
 | PUT | `/admin/approve-supplier/:id` | Approve supplier account |
 | GET | `/admin/messages` | Get contact messages |
-| POST | `/admin/reply` | Reply to a contact message |
+| POST | `/admin/reply` | Reply to contact message |
 
-> **Note:** The tables above show selected API endpoints. The complete application contains 53 APIs.
+*Note: The above tables contain selected API endpoints. The complete application includes 53 APIs.*
 
 ---
 
-## 🚀 Getting Started
+## Security Features
 
-Follow these instructions to set up and run Online PakBazar locally.
+Security is an important part of the application.
+
+Implemented security features include:
+
+* JWT-based authentication
+* Password hashing using bcryptjs
+* 10 salt rounds for password hashing
+* Role-Based Access Control (RBAC)
+* Protected frontend routes
+* Protected backend API endpoints
+* CORS configuration
+* Secure password management
+
+---
+
+## Local Development
+
+Follow the steps below to run Online PakBazar on your local machine.
 
 ### Prerequisites
 
-Make sure you have the following installed:
+Make sure the following tools are installed:
 
-- [Node.js](https://nodejs.org/) (v14 or higher)
-- [MongoDB](https://www.mongodb.com/) (Local installation or MongoDB Atlas)
-- [Git](https://git-scm.com/)
-- [Visual Studio Code](https://code.visualstudio.com/) (Recommended)
+* Node.js (v14 or higher)
+* MongoDB (Local installation or MongoDB Atlas)
+* npm
+* Git
+* Visual Studio Code (Recommended)
 
 ### 1. Clone the Repository
 
@@ -341,13 +533,13 @@ Make sure you have the following installed:
 git clone YOUR_GITHUB_REPOSITORY_URL
 ```
 
-Navigate to the project directory:
+### 2. Navigate to the Project
 
 ```bash
 cd Online-PakBazar
 ```
 
-### 2. Backend Setup
+### 3. Backend Setup
 
 Navigate to the server directory:
 
@@ -355,7 +547,7 @@ Navigate to the server directory:
 cd server
 ```
 
-Install backend dependencies:
+Install dependencies:
 
 ```bash
 npm install
@@ -363,15 +555,15 @@ npm install
 
 Create a `.env` file inside the `server` directory and configure the environment variables.
 
-### 3. Frontend Setup
+### 4. Frontend Setup
 
-Open a new terminal and navigate to the client directory:
+Open a separate terminal and navigate to the client directory:
 
 ```bash
 cd client
 ```
 
-Install frontend dependencies:
+Install dependencies:
 
 ```bash
 npm install
@@ -379,9 +571,7 @@ npm install
 
 Create a `.env` file inside the `client` directory.
 
-### 4. Run the Application
-
-**Start the Backend Server:**
+### 5. Run the Backend Server
 
 From the `server` directory:
 
@@ -395,7 +585,7 @@ Backend server:
 http://localhost:5000
 ```
 
-**Start the Frontend Application:**
+### 6. Run the Frontend Application
 
 From the `client` directory:
 
@@ -411,11 +601,13 @@ http://localhost:5173
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
+
+The application requires environment variables for database connectivity, authentication, email services, and API configuration.
 
 ### Backend Configuration
 
-Create `server/.env`:
+Create a `.env` file inside the `server` directory:
 
 ```env
 PORT=5000
@@ -429,12 +621,12 @@ JWT_EXPIRE=7d
 
 # Email Configuration
 EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_email_app_password
+EMAIL_PASS=your_app_password
 
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your_email@gmail.com
-SMTP_PASS=your_email_app_password
+SMTP_PASS=your_app_password
 
 FROM_EMAIL=your_email@gmail.com
 ADMIN_EMAIL=admin@pakbazar.com
@@ -445,83 +637,96 @@ FRONTEND_URI=http://localhost:5173
 
 ### Frontend Configuration
 
-Create `client/.env`:
+Create a `.env` file inside the `client` directory:
 
 ```env
 VITE_API_URL=http://localhost:5000
 ```
 
-> **Important:** Replace all placeholder values with your actual credentials and configuration. Never upload `.env` files, database credentials, email passwords, or JWT secrets to GitHub.
+**Important:** Replace the placeholder values with your actual configuration. Never upload `.env` files, database credentials, email passwords, or JWT secrets to GitHub.
 
 ---
 
-## 📁 Project Structure
+## Application URLs
 
-The project is organized into separate frontend and backend directories.
+After starting the development servers, the application will be available at:
 
-```text
-Online-PakBazar/
-│
-├── client/
-│   ├── public/
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── services/
-│   │   ├── routes/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
-│   └── .env
-│
-├── server/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── utils/
-│   ├── server.js
-│   ├── package.json
-│   └── .env
-│
-├── .gitignore
-└── README.md
-```
-
-*Note: This is a representative project structure. Actual folders and filenames may differ depending on the implementation.*
+| Service | URL |
+|---|---|
+| Frontend | http://localhost:5173 |
+| Backend | http://localhost:5000 |
 
 ---
 
-## 👩‍💻 Developer
+## Project Scope
+
+Online PakBazar is a full-stack e-commerce application developed to demonstrate practical implementation of MERN Stack technologies.
+
+### Included
+
+* React-based frontend
+* Node.js and Express.js backend
+* MongoDB database integration
+* User registration and authentication
+* Email OTP verification
+* Role-based access control
+* Admin dashboard
+* Supplier dashboard
+* Product management
+* Product search and filtering
+* Shopping cart
+* Wishlist
+* Order management
+* Order tracking
+* Cash on Delivery
+* Ratings and reviews
+* Contact form and email notifications
+* Responsive user interface
+* Protected routes and API endpoints
+
+---
+
+## Future Improvements
+
+Potential future enhancements include:
+
+* Online payment gateway integration
+* Real-time order tracking using Socket.IO
+* Advanced product recommendations
+* Product comparison functionality
+* Advanced analytics and reporting
+* Sales reports for suppliers
+* Advanced notification system
+* Improved product image storage using cloud services
+* Enhanced admin analytics dashboard
+* Promotional offers and discount coupons
+* Advanced inventory management
+
+---
+
+## Developer
 
 **Umm e Rubab Fatima**
 
-- **VU ID:** BC220401286
-- **Program:** BS Software Engineering
-- **Project:** Final Year Project (FYP)
-- **Project Title:** Online PakBazar – E-Commerce Platform
+* **VU ID:** BC220401286
+* **Program:** BS Software Engineering
+* **Project:** Final Year Project (FYP)
+* **Project Title:** Online PakBazar – E-Commerce Platform
 
 ---
 
-## 🎓 Project Supervisor
+## Project Supervisor
 
 **Muhammad Qamar Usman**
 
-- Software Projects & Research Section
-- Department of Computer Sciences
-- Virtual University of Pakistan
+* Software Projects & Research Section
+* Department of Computer Sciences
+* Virtual University of Pakistan
 
 ---
 
-## 📄 License
+## License
 
-This project was developed for academic purposes as part of the Final Year Project (FYP) requirements at Virtual University of Pakistan.
+This project was developed for academic purposes as part of the Final Year Project (FYP) requirements at **Virtual University of Pakistan**.
 
 © 2026 Online PakBazar – All Rights Reserved.
-
----
-
-**Developed with ❤️ by Umm e Rubab Fatima**
