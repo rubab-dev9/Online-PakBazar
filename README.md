@@ -1,4 +1,4 @@
-# Online PakBazar – E-Commerce Platform
+# Online PakBazar_E-Commerce Platform
 
 A full-stack **MERN-based multi-vendor e-commerce platform** developed as a **Final Year Project (FYP)** for Virtual University of Pakistan.
 
