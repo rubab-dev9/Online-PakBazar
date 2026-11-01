@@ -1,0 +1,61 @@
+.faqs-hero {
+    height: 200px;
+    background: linear-gradient(135deg, #2FA84F, #1F7A38);
+    color: white;
+}
+
+.faqs-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.faq-icon {
+    font-size: 18px;
+    color: #2FA84F;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #E8F6EC;
+    color: #1F7A38;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #2FA84F;
+}
+
+.faq-answer {
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-cta {
+    background: #f8f9fa;
+    border-radius: 16px;
+}
+
+.contact-cta-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: linear-gradient(135deg, #2FA84F, #1F7A38);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-cta-btn:hover {
+    transform: translateY(-2px);
+    color: white;
+    box-shadow: 0 4px 12px rgba(47, 168, 79, 0.3);
+}

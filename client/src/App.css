@@ -1,0 +1,13 @@
+:root {
+  --primary-green: #2FA84F;
+  --dark-green: #1F7A38;
+  --light-green: #E8F6EC;
+  --text-primary: #4A4A4A;
+  --text-secondary: #7A7A7A;
+  --white: #FFFFFF;
+}
+
+/* Add to your global CSS */
+body {
+    overscroll-behavior: none;
+}

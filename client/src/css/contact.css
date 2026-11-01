@@ -1,0 +1,208 @@
+/* Hero Section */
+.contact-hero {
+    height: 200px;
+    background: linear-gradient(135deg, #2FA84F, #1F7A38);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #E8F6EC;
+}
+
+/* Section Headings */
+.section-heading {
+    color: #2FA84F;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Contact Info Cards */
+.contact-info-card {
+    border: none;
+    border-radius: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #2FA84F, #1F7A38);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.contact-icon {
+    font-size: 30px;
+    color: white;
+}
+
+/* Contact Form Card */
+.contact-form-card {
+    border: none;
+    border-radius: 16px;
+    background-color: #fff;
+}
+
+.contact-form-card .form-control {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+}
+
+.contact-form-card .form-control:focus {
+    border-color: #2FA84F;
+    box-shadow: 0 0 0 3px rgba(47, 168, 79, 0.1);
+}
+
+.contact-submit-btn {
+    background: linear-gradient(135deg, #2FA84F, #1F7A38);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(47, 168, 79, 0.3);
+}
+
+/* Business Hours */
+.business-hours {
+    margin-top: 20px;
+}
+
+.hour-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.hour-item:last-child {
+    border-bottom: none;
+}
+
+.hour-icon {
+    font-size: 24px;
+    color: #2FA84F;
+}
+
+.hour-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.hour-item p {
+    margin: 0;
+    color: #6c757d;
+}
+
+/* Social Links */
+.social-links h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2FA84F;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #2FA84F;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Map Card */
+.map-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-hero {
+        height: 150px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .contact-icon-wrapper {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .contact-icon {
+        font-size: 24px;
+    }
+    
+    .contact-info-card h4 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .contact-submit-btn {
+        width: 100%;
+    }
+    
+    .social-icons {
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}

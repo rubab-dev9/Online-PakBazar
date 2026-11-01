@@ -1,0 +1,98 @@
+/* Hero Section */
+.about-hero {
+  height: 153px;
+  background: linear-gradient(135deg, #2FA84F, #1F7A38);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 22px;
+}
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-subtitle {
+  font-size: 1rem;
+  color: #E8F6EC;
+}
+
+/* Section Headings */
+.section-heading, .section-title {
+  color: #2FA84F;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Mission & Vision Cards */
+.mission-card {
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #E8F6EC;
+}
+.mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.mission-icon {
+  font-size: 3rem;
+  color: #1F7A38;
+  margin-bottom: 15px;
+}
+
+/* Why Choose Us Cards */
+.choose-card {
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+  padding-top: 30px; /* slightly reduced */
+}
+.choose-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Icons without circular background */
+.choose-icon {
+  font-size: 2.5rem;
+  color: #2FA84F; /* keep brand green */
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.choose-card:hover .choose-icon {
+  transform: scale(1.1);
+  color: #1F7A38; /* darker green on hover */
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+  /* object-fit: contain; */
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: #F4FFF8;
+  padding: 40px 20px;
+  border-radius: 12px;
+}
+.cta-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.cta-btn {
+  background-color: #2FA84F;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 35px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+.cta-btn:hover {
+  background-color: #1F7A38;
+}
